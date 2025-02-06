@@ -12,7 +12,7 @@ import {
   DialogTitle,
 } from "@mui/material";
 import { CDialogSubscriptionForm } from "./CDialogSubscriptionForm";
-import { addSubscriptionForm } from "../../admin/utils";
+import { addSubscriptionForm } from "../../account/utils";
 
 export const CAddSubscriptionDialog = ({
   openAddSubscriptionDialog,

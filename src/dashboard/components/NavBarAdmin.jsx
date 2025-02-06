@@ -1,7 +1,7 @@
 import { AppBar, Box, Button, Container, Toolbar } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import { CMenuAdmin } from "./CMenuAdmin";
-import { AuthLogo } from "../../admin/components/AuthLogo";
+import { AuthLogo } from "../../account/components/AuthLogo";
 
 export const NavBarAdmin = () => {
   const pages = [

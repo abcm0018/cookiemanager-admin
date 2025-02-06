@@ -1,7 +1,7 @@
 import { useAuthStore } from "../hooks";
 import { useEffect } from "react";
 import { Navigate } from "react-router-dom";
-import { Loader } from "../controlpanel/components";
+import { Loader } from "../dashboard/components";
 import { AdminRoutes } from "./AdminRoutes";
 import { PublicRoutes } from "./PublicRoutes";
 

@@ -1,4 +1,4 @@
-import { AdminLayout } from "../../admin/layout";
+import { AdminLayout } from "../../account/layout";
 import { MainSectionUsersPage } from "../components";
 
 export const UsersPage = () => {

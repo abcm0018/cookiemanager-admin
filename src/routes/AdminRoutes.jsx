@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { ControlPanelPage } from "../controlpanel/pages";
-import { AdminProfilePage } from "../admin/pages";
+import { ControlPanelPage } from "../dashboard/pages";
+import { AdminProfilePage } from "../account/pages";
 import { SubscriptionsPage } from "../subscriptions/pages";
 import { UsersPage } from "../users/pages";
 

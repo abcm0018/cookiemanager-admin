@@ -12,7 +12,7 @@ import { useForm, useSubscriptionStore } from "../../hooks";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { CDialogSubscriptionForm } from "./CDialogSubscriptionForm";
-import { updateSubscriptionForm } from "../../admin/utils";
+import { updateSubscriptionForm } from "../../account/utils";
 
 export const CUpdateSubscriptionDialog = ({
   subscriptionToEdit,
