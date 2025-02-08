@@ -4,8 +4,6 @@ import PropTypes from "prop-types";
 export const CDialogSubscriptionForm = ({
   planTypeSubscription,
   descriptionSubscription,
-  characteristic1Subscription,
-  characteristic2Subscription,
   priceSubscription,
   maxDomainsSubscription,
   onEditSubscriptionChange,
@@ -34,32 +32,6 @@ export const CDialogSubscriptionForm = ({
             value={priceSubscription}
             label="Precio"
             placeholder="Precio"
-            type="text"
-            onChange={onEditSubscriptionChange}
-            sx={{ width: 378 }}
-          />
-        </Box>
-        <Box sx={{ width: 775, mt: 1 }}>
-          <TextField
-            required
-            fullWidth
-            id="characteristic1"
-            name="characteristic1Subscription"
-            value={characteristic1Subscription}
-            label="Característica 1"
-            placeholder="Característica 1"
-            type="text"
-            onChange={onEditSubscriptionChange}
-            sx={{ width: 378, mr: 2 }}
-          />
-          <TextField
-            required
-            fullWidth
-            id="characteristic2"
-            name="characteristic2Subscription"
-            value={characteristic2Subscription}
-            label="Característica 2"
-            placeholder="Característica 2"
             type="text"
             onChange={onEditSubscriptionChange}
             sx={{ width: 378 }}
@@ -99,8 +71,6 @@ export const CDialogSubscriptionForm = ({
 CDialogSubscriptionForm.propTypes = {
   planTypeSubscription: PropTypes.string.isRequired,
   descriptionSubscription: PropTypes.string.isRequired,
-  characteristic1Subscription: PropTypes.string.isRequired,
-  characteristic2Subscription: PropTypes.string.isRequired,
   priceSubscription: PropTypes.string.isRequired,
   maxDomainsSubscription: PropTypes.number,
   onEditSubscriptionChange: PropTypes.func.isRequired,

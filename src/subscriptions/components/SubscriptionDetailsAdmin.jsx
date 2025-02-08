@@ -17,8 +17,6 @@ export const SubscriptionDetailsAdmin = ({
   description = "",
   price = "",
   maxDomains = "",
-  characteristic1 = "",
-  characteristic2 = "",
   buttonTitle1 = "Modificar",
   buttonTitle2 = "Eliminar",
   handleUpdateSubscription,
@@ -85,8 +83,6 @@ export const SubscriptionDetailsAdmin = ({
             sx={{ color: "text.secondary", pl: 2, mb: 3 }}
           >
             <li>El número máximo de dominios permitidos es: {maxDomains}</li>
-            <li>{characteristic1}</li>
-            <li>{characteristic2}</li>
           </Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: "center", p: 2, pt: 0 }}>
@@ -127,8 +123,6 @@ SubscriptionDetailsAdmin.propTypes = {
   description: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
   maxDomains: PropTypes.number.isRequired,
-  characteristic1: PropTypes.string.isRequired,
-  characteristic2: PropTypes.string.isRequired,
   buttonTitle1: PropTypes.string.isRequired,
   buttonTitle2: PropTypes.string.isRequired,
   handleUpdateSubscription: PropTypes.func.isRequired,

@@ -24,8 +24,6 @@ export const CUpdateSubscriptionDialog = ({
   const {
     planTypeSubscription,
     descriptionSubscription,
-    characteristic1Subscription,
-    characteristic2Subscription,
     priceSubscription,
     maxDomainsSubscription,
     onInputChange: onSubscriptionChange,
@@ -38,8 +36,6 @@ export const CUpdateSubscriptionDialog = ({
       setFormState({
         planTypeSubscription: subscriptionToEdit.planType,
         descriptionSubscription: subscriptionToEdit.description,
-        characteristic1Subscription: subscriptionToEdit.characteristic1,
-        characteristic2Subscription: subscriptionToEdit.characteristic2,
         priceSubscription: subscriptionToEdit.price,
         maxDomainsSubscription: subscriptionToEdit.maxDomains || 0,
       });
@@ -51,8 +47,6 @@ export const CUpdateSubscriptionDialog = ({
     startUpdatingSubscription({
       planType: planTypeSubscription,
       description: descriptionSubscription,
-      characteristic1: characteristic1Subscription,
-      characteristic2: characteristic2Subscription,
       price: priceSubscription,
       maxDomains: maxDomainsSubscription,
     });
@@ -70,7 +64,7 @@ export const CUpdateSubscriptionDialog = ({
         maxWidth="md"
         open={openUpdateSubscriptionDialog}
         onClose={handleCloseUpdateSubscriptionDialog}
-        PaperProps={{
+        InputProps={{
           component: "form",
           onSubmit: (event) => {
             onSubscriptionSubmit(event);
@@ -91,8 +85,6 @@ export const CUpdateSubscriptionDialog = ({
           <CDialogSubscriptionForm
             planTypeSubscription={planTypeSubscription}
             descriptionSubscription={descriptionSubscription}
-            characteristic1Subscription={characteristic1Subscription}
-            characteristic2Subscription={characteristic2Subscription}
             priceSubscription={priceSubscription}
             maxDomainsSubscription={maxDomainsSubscription}
             onEditSubscriptionChange={onSubscriptionChange}

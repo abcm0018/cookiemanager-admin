@@ -31,8 +31,6 @@ export const CardsSubscription = ({ subscriptions = [] }) => {
             key={subscription.id}
             planType={subscription.planType}
             description={subscription.description}
-            characteristic1={subscription.characteristic1}
-            characteristic2={subscription.characteristic2}
             price={subscription.price}
             maxDomains={subscription.maxDomains}
             handleUpdateSubscription={() =>

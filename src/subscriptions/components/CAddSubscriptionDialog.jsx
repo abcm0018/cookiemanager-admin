@@ -23,8 +23,6 @@ export const CAddSubscriptionDialog = ({
   const {
     planTypeSubscription,
     descriptionSubscription,
-    characteristic1Subscription,
-    characteristic2Subscription,
     priceSubscription,
     maxDomainsSubscription,
     onInputChange: onSubscriptionChange,
@@ -35,8 +33,6 @@ export const CAddSubscriptionDialog = ({
     startSavingSubscription({
       planType: planTypeSubscription,
       description: descriptionSubscription,
-      characteristic1: characteristic1Subscription,
-      characteristic2: characteristic2Subscription,
       price: priceSubscription,
       maxDomains: maxDomainsSubscription,
     });
@@ -55,7 +51,7 @@ export const CAddSubscriptionDialog = ({
         maxWidth="md"
         open={openAddSubscriptionDialog}
         onClose={handleCloseAddSubscriptionDialog}
-        PaperProps={{
+        InputProps={{
           component: "form",
           onSubmit: (event) => {
             onSubscriptionSubmit(event);
@@ -76,8 +72,6 @@ export const CAddSubscriptionDialog = ({
           <CDialogSubscriptionForm
             planTypeSubscription={planTypeSubscription}
             descriptionSubscription={descriptionSubscription}
-            characteristic1Subscription={characteristic1Subscription}
-            characteristic2Subscription={characteristic2Subscription}
             priceSubscription={priceSubscription}
             maxDomainsSubscriptions={maxDomainsSubscription}
             onEditSubscriptionChange={onSubscriptionChange}
