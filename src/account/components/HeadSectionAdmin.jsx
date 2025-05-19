@@ -6,20 +6,20 @@ import { useAuthStore } from "../../hooks";
 
 export const HeadSectionAdmin = () => {
   const { user } = useAuthStore();
-  const [openEditUserDialog, setOpenEditUserDialog] = useState(false);
+  const [openEditAdminDialog, setOpenEditAdminDialog] = useState(false);
 
   // Hook con el la información del dominio a editar
   const [adminToEdit, setAdminToEdit] = useState({});
 
-  const handleOpenEditUser = () => {
+  const handleOpenEditAdmin = () => {
     console.log("Abriendo el dialogo para añadir dominio");
-    setOpenEditUserDialog(true);
+    setOpenEditAdminDialog(true);
     setAdminToEdit(user);
   };
 
-  const handleCloseEditUserDialog = () => {
+  const handleCloseEditAdminDialog = () => {
     console.log("Cerrando dialogo de añadir dominio");
-    setOpenEditUserDialog(false);
+    setOpenEditAdminDialog(false);
   };
 
   return (
@@ -45,14 +45,14 @@ export const HeadSectionAdmin = () => {
             <Button
               variant="contained"
               sx={{ bgcolor: "secondary.main" }}
-              onClick={handleOpenEditUser}
+              onClick={handleOpenEditAdmin}
             >
               Editar perfil
             </Button>
           </Box>
           <CEditAdminDialog
-            openEditAdminDialog={openEditUserDialog}
-            handleCloseAdminUserDialog={handleCloseEditUserDialog}
+            openEditAdminDialog={openEditAdminDialog}
+            handleCloseEditAdminDialog={handleCloseEditAdminDialog}
             adminToEdit={adminToEdit}
           />
         </Container>

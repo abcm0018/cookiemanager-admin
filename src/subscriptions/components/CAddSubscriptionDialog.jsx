@@ -26,7 +26,13 @@ export const CAddSubscriptionDialog = ({
     priceSubscription,
     maxDomainsSubscription,
     onInputChange: onSubscriptionChange,
+    onResetForm,
   } = useForm(addSubscriptionForm);
+
+  const handleCloseAndReset = () => {
+    onResetForm();
+    handleCloseAddSubscriptionDialog();
+  };
 
   const onSubscriptionSubmit = (event) => {
     event.preventDefault();
@@ -50,12 +56,12 @@ export const CAddSubscriptionDialog = ({
         fullWidth
         maxWidth="md"
         open={openAddSubscriptionDialog}
-        onClose={handleCloseAddSubscriptionDialog}
-        InputProps={{
+        onClose={handleCloseAndReset}
+        PaperProps={{
           component: "form",
           onSubmit: (event) => {
             onSubscriptionSubmit(event);
-            handleCloseAddSubscriptionDialog();
+            handleCloseAndReset();
           },
         }}
       >
@@ -92,7 +98,7 @@ export const CAddSubscriptionDialog = ({
           <Button
             variant="outlined"
             sx={{ bgcolor: "primary.main", color: "white" }}
-            onClick={handleCloseAddSubscriptionDialog}
+            onClick={handleCloseAndReset}
           >
             Cancelar
           </Button>

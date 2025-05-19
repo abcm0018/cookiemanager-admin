@@ -5,26 +5,38 @@ export const subscriptionSlice = createSlice({
   initialState: {
     isLoadingSubscriptions: true, // Nos indica si ya se han cargado las subscripciones
     subscriptions: [],
-    errorMessage: undefined,
+    errorSubscriptionMessage: undefined,
   },
   reducers: {
     // Carga la lista de suscripciones
     onLoadSubscriptions: (state, { payload = [] }) => {
       state.isLoadingSubscriptions = false;
       state.subscriptions = payload;
+      //Si se produce un error en el listado de las suscripciones
+      state.errorSubscriptionMessage = payload;
+
+      // Si se añade una nueva suscripcion
+      payload.forEach((subscription) => {
+        const exists = state.subscriptions.some(
+          (dbSubscription) => dbSubscription.id === subscription.id
+        );
+        if (!exists) {
+          state.subscriptions.push(subscription);
+        }
+      });
     },
     onAddNewSubscription: (state, { payload }) => {
-      // Codigo para crear un nuevo dominio
-      state.isLoading = false;
+      // Codigo para crear una nueva suscripción
+      state.isLoadingSubscriptions = false;
       state.subscriptions.push(payload);
 
-      // Si se produce un error en la edición del dominio
-      state.errorDomainMessage = payload;
+      // Si se produce un error en la edición de la suscripción
+      state.errorSubscriptionMessage = payload;
     },
 
     onUpdateSubscription: (state, { payload }) => {
       // código para actualizar una subscripcion
-      state.isLoading = false;
+      state.isLoadingSubscriptions = false;
 
       const index = state.subscriptions.findIndex(
         (subscription) => subscription.planType === payload.planType

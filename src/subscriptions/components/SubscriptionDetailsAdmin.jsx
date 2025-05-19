@@ -36,8 +36,8 @@ export const SubscriptionDetailsAdmin = ({
       if (result.isConfirmed) {
         startDeletingSubscription(planType);
         Swal.fire({
-          title: "Suscripción Eliminado",
-          text: "La suscripción ha sido eliminado correctamente.",
+          title: "Suscripción Eliminada",
+          text: "La suscripción ha sido eliminada correctamente.",
           icon: "success",
         });
       }

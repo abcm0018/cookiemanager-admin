@@ -58,7 +58,7 @@ export const useSubscriptionStore = () => {
     } catch (error) {
       console.error(error);
       const errorMessage = error.response?.data?.msg || "Error desconocido";
-      Swal.fire("Error al crear el dominio", errorMessage, "error");
+      Swal.fire("Error al crear la suscripcion", errorMessage, "error");
 
       // Retornamos null en caso de error.
       return null;
@@ -89,7 +89,11 @@ export const useSubscriptionStore = () => {
       dispatch(onUpdateSubscription(data));
     } catch (error) {
       console.log(error);
-      Swal.fire("Error al actualizar", error.response.data.msg, "error");
+      Swal.fire(
+        "Error al actualizar la suscripcion",
+        error.response.data.msg,
+        "error"
+      );
     }
   };
 
@@ -100,9 +104,9 @@ export const useSubscriptionStore = () => {
       // Despacha la acción para eliminar el usuario del estado local
       dispatch(onDeleteSubscription(planType));
     } catch (error) {
-      console.error("Error al eliminar el usuario:", error);
+      console.error("Error al eliminar la suscripción:", error);
       const errorMsg = error.response?.data?.msg || "Error desconocido";
-      Swal.fire("Error al eliminar", errorMsg, "error");
+      Swal.fire("Error al eliminar la suscripción", errorMsg, "error");
     }
   };
 

@@ -67,7 +67,7 @@ export const LoginAdmin = () => {
               sx={{ mt: 1, mb: 1 }}
             >
               <Link
-                to="/admin/recovery-password"
+                to="/auth/admin/recovery-password"
                 component={RouterLink}
                 underline="none"
                 sx={{ color: "secondary.main" }}

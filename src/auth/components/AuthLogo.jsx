@@ -17,21 +17,17 @@ export const AuthLogo = () => {
       <Typography
         variant="h4"
         align="center"
-        sx={{ mb: 1, mt: 3, color: "white", fontStyle: "italic" }}
+        sx={{ mb: 1, mt: 3, color: "white" }}
       >
         Cookie
       </Typography>
-      <Typography
-        variant="h4"
-        align="center"
-        sx={{ mt: 3, color: "white", fontStyle: "italic" }}
-      >
+      <Typography variant="h4" align="center" sx={{ mt: 3, color: "white" }}>
         Manager
       </Typography>
       <Typography
         variant="h4"
         align="center"
-        sx={{ mt: 3, color: "secondary.main", fontStyle: "italic" }}
+        sx={{ mt: 3, color: "secondary.main" }}
       >
         Admin
       </Typography>

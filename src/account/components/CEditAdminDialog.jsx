@@ -17,9 +17,9 @@ import { updateAdminForm } from "../utils";
 export const CEditAdminDialog = ({
   adminToEdit,
   openEditAdminDialog,
-  handleCloseAdminUserDialog,
+  handleCloseEditAdminDialog,
 }) => {
-  const { startUpdatigAdmin, errorMessage } = useAdminStore();
+  const { startUpdatingAdmin, errorMessage } = useAdminStore();
 
   const {
     name,
@@ -42,7 +42,7 @@ export const CEditAdminDialog = ({
 
   const onAdminSubmit = (event) => {
     event.preventDefault();
-    startUpdatigAdmin({
+    startUpdatingAdmin({
       name: name,
       surname: surname,
       email: email,
@@ -61,12 +61,12 @@ export const CEditAdminDialog = ({
         fullWidth
         maxWidth="md"
         open={openEditAdminDialog}
-        onClose={handleCloseAdminUserDialog}
+        onClose={handleCloseEditAdminDialog}
         PaperProps={{
           component: "form",
           onSubmit: (event) => {
             onAdminSubmit(event);
-            handleCloseAdminUserDialog();
+            handleCloseEditAdminDialog();
           },
         }}
       >
@@ -79,7 +79,7 @@ export const CEditAdminDialog = ({
             name={name}
             surname={surname}
             email={email}
-            onEditUserChange={onAdminChange}
+            onEditAdminChange={onAdminChange}
           />
         </DialogContent>
         <DialogActions sx={{ pl: 8, pr: 8, pb: 3 }}>
@@ -97,7 +97,7 @@ export const CEditAdminDialog = ({
           <Button
             variant="outlined"
             sx={{ bgcolor: "primary.main", color: "white" }}
-            onClick={handleCloseAdminUserDialog}
+            onClick={handleCloseEditAdminDialog}
           >
             Cancelar
           </Button>
@@ -110,5 +110,5 @@ export const CEditAdminDialog = ({
 CEditAdminDialog.propTypes = {
   adminToEdit: PropTypes.object.isRequired,
   openEditAdminDialog: PropTypes.bool,
-  handleCloseAdminUserDialog: PropTypes.func,
+  handleCloseEditAdminDialog: PropTypes.func,
 };

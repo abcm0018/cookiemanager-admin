@@ -25,21 +25,9 @@ export const adminSlice = createSlice({
     onDeleteUser: (state, { payload: userEmail }) => {
       state.users = state.users.filter((user) => user.email !== userEmail);
     },
-
-    // Acción para actualizar los datos de un administrador
-    onUpdateAdmin: (state, { payload }) => {
-      // Código para actualizar los datos del admin
-      state.isLoading = false;
-
-      const index = state.users.findIndex((user) => user.id === payload.id);
-
-      if (index !== -1) {
-        state.users[index] = payload;
-      }
-    },
   },
 });
 
-export const { onLoadUsers, onDeleteUser, onUpdateAdmin } = adminSlice.actions;
+export const { onLoadUsers, onDeleteUser } = adminSlice.actions;
 
 export default adminSlice.reducer;

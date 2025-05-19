@@ -1,11 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import cookieManagerApi from "../api/cookieManagerApi";
-import {
-  onDeleteUser,
-  onLoadUsers,
-  onUpdateAdmin,
-} from "../store/admin/adminSlice";
 import Swal from "sweetalert2";
+import { onDeleteUser, onLoadUsers, onUpdate } from "../store";
 
 export const useAdminStore = () => {
   const dispatch = useDispatch();
@@ -43,7 +39,7 @@ export const useAdminStore = () => {
     }
   };
 
-  const startUpdatigAdmin = async ({ name, surname, email }) => {
+  const startUpdatingAdmin = async ({ name, surname, email }) => {
     try {
       const { data } = await cookieManagerApi.put(`/users/admin`, {
         name,
@@ -51,7 +47,7 @@ export const useAdminStore = () => {
         email,
       });
       console.log(data);
-      dispatch(onUpdateAdmin(data));
+      dispatch(onUpdate(data));
     } catch (error) {
       console.log(error);
       Swal.fire("Error al actualizar", error.response.data.msg, "error");
@@ -66,6 +62,6 @@ export const useAdminStore = () => {
     // Métodos
     startLoadingUsers,
     startDeletingUser,
-    startUpdatigAdmin,
+    startUpdatingAdmin,
   };
 };

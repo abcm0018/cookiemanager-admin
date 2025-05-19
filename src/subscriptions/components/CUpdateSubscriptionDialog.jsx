@@ -64,7 +64,7 @@ export const CUpdateSubscriptionDialog = ({
         maxWidth="md"
         open={openUpdateSubscriptionDialog}
         onClose={handleCloseUpdateSubscriptionDialog}
-        InputProps={{
+        PaperProps={{
           component: "form",
           onSubmit: (event) => {
             onSubscriptionSubmit(event);
