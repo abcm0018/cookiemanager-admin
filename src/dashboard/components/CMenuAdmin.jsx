@@ -13,6 +13,7 @@ import {
 import { useAuthStore } from "../../hooks";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import avatar from "../../assets/img/avatar.jpg";
 
 export const CMenuAdmin = () => {
   const { user, startLogout } = useAuthStore();
@@ -34,7 +35,7 @@ export const CMenuAdmin = () => {
     <Box sx={{ flexGrow: 0 }}>
       <Tooltip title="Ver mi perfil">
         <IconButton onClick={handleClick} sx={{ p: 0 }}>
-          <Avatar alt="usuario" src="/avatar.jpg" />
+          <Avatar alt="usuario" src={avatar} />
         </IconButton>
       </Tooltip>
       <Box

@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const cookieManagerApi = axios.create({
-  baseURL: "http://localhost:8080/api",
+  //baseURL: "http://localhost:8080/api",
+  //baseURL: "https://gestorcookies-689273847908.europe-southwest1.run.app/api", //Cloud Run
+  baseURL: "https://tfgana.nw.r.appspot.com/api", //App Engine
 });
 
 //Configurar interceptores.
