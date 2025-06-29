@@ -38,6 +38,7 @@ export const useSubscriptionStore = () => {
     characteristic2,
     price,
     maxDomains,
+    discount,
   }) => {
     try {
       const { data } = await cookieManagerApi.post("/subscriptions", {
@@ -47,6 +48,7 @@ export const useSubscriptionStore = () => {
         characteristic2,
         price,
         maxDomains,
+        discount,
       });
       console.log(data);
 
@@ -72,6 +74,7 @@ export const useSubscriptionStore = () => {
     characteristic2,
     price,
     maxDomains,
+    discount,
   }) => {
     try {
       const { data } = await cookieManagerApi.put(
@@ -83,6 +86,7 @@ export const useSubscriptionStore = () => {
           characteristic2,
           price,
           maxDomains,
+          discount,
         }
       );
       console.log(data);

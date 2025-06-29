@@ -53,6 +53,11 @@ export const subscriptionSlice = createSlice({
         (subscription) => subscription.planType !== planType
       );
     },
+
+    onClearSubscription: (state) => {
+      state.isLoadingSubscriptions = false;
+      state.subscriptions = [];
+    },
   },
 });
 
@@ -61,4 +66,5 @@ export const {
   onAddNewSubscription,
   onUpdateSubscription,
   onDeleteSubscription,
+  onClearSubscription,
 } = subscriptionSlice.actions;

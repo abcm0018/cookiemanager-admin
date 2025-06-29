@@ -6,6 +6,7 @@ export const CDialogAdminForm = ({
   surname,
   email,
   onEditAdminChange,
+  errors = {},
 }) => {
   return (
     <Box>
@@ -20,6 +21,9 @@ export const CDialogAdminForm = ({
             value={name}
             type="text"
             onChange={onEditAdminChange}
+            error={!!errors.name}
+            helperText={errors.name}
+            sx={{ width: 288 }}
           />
         </Box>
         <Box sx={{ width: 775, mt: 2 }}>
@@ -32,6 +36,9 @@ export const CDialogAdminForm = ({
             value={surname}
             type="text"
             onChange={onEditAdminChange}
+            error={!!errors.surname}
+            helperText={errors.surname}
+            sx={{ width: 288 }}
           />
         </Box>
         <Box sx={{ width: 775, mt: 2 }}>
@@ -44,6 +51,10 @@ export const CDialogAdminForm = ({
             value={email}
             onChange={onEditAdminChange}
             type="text"
+            disabled
+            error={!!errors.email}
+            helperText={errors.email}
+            sx={{ width: 288 }}
           />
         </Box>
       </Grid2>
@@ -56,4 +67,5 @@ CDialogAdminForm.propTypes = {
   surname: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   onEditAdminChange: PropTypes.func.isRequired,
+  errors: PropTypes.object,
 };

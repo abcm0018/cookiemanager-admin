@@ -25,9 +25,13 @@ export const adminSlice = createSlice({
     onDeleteUser: (state, { payload: userEmail }) => {
       state.users = state.users.filter((user) => user.email !== userEmail);
     },
+    onClearUser: (state) => {
+      state.isLoading = false;
+      state.users = [];
+    },
   },
 });
 
-export const { onLoadUsers, onDeleteUser } = adminSlice.actions;
+export const { onLoadUsers, onDeleteUser, onClearUser } = adminSlice.actions;
 
 export default adminSlice.reducer;

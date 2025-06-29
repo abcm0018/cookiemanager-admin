@@ -5,4 +5,5 @@ export const updateSubscriptionForm = {
   characteristic2Subscription: "",
   priceSubscription: "",
   maxDomainsSubscription: 0,
+  discount: 0,
 };

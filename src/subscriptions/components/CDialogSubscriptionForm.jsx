@@ -7,6 +7,7 @@ export const CDialogSubscriptionForm = ({
   priceSubscription,
   maxDomainsSubscription,
   onEditSubscriptionChange,
+  errors = {},
 }) => {
   return (
     <Box>
@@ -23,6 +24,8 @@ export const CDialogSubscriptionForm = ({
             type="text"
             onChange={onEditSubscriptionChange}
             sx={{ width: 378, mr: 2 }}
+            error={!!errors.planTypeSubscription}
+            helperText={errors.planTypeSubscription}
           />
           <TextField
             required
@@ -35,6 +38,8 @@ export const CDialogSubscriptionForm = ({
             type="text"
             onChange={onEditSubscriptionChange}
             sx={{ width: 378 }}
+            error={!!errors.priceSubscription}
+            helperText={errors.priceSubscription}
           />
         </Box>
         <Box sx={{ width: 775, mt: 1 }}>
@@ -49,6 +54,8 @@ export const CDialogSubscriptionForm = ({
             type="text"
             onChange={onEditSubscriptionChange}
             sx={{ width: 378, mr: 2 }}
+            error={!!errors.descriptionSubscription}
+            helperText={errors.descriptionSubscription}
           />
           <TextField
             required
@@ -61,6 +68,8 @@ export const CDialogSubscriptionForm = ({
             type="number"
             onChange={onEditSubscriptionChange}
             sx={{ width: 378 }}
+            error={!!errors.maxDomainsSubscription}
+            helperText={errors.maxDomainsSubscription}
           />
         </Box>
       </Grid2>
@@ -74,4 +83,5 @@ CDialogSubscriptionForm.propTypes = {
   priceSubscription: PropTypes.string.isRequired,
   maxDomainsSubscription: PropTypes.number,
   onEditSubscriptionChange: PropTypes.func.isRequired,
+  errors: PropTypes.object,
 };
